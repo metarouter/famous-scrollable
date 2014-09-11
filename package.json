@@ -1,0 +1,20 @@
+{
+  "name": "famous-scrollable",
+  "version": "0.1.0",
+  "description": "Nothing fancy alternative to Scrollview (based on Scroller)",
+  "main": "Scrollable.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metarouter/famous-scrollable.git"
+  },
+  "author": "Arturas Lebedevas <metarouter@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/metarouter/famous-scrollable/issues"
+  },
+  "homepage": "https://github.com/metarouter/famous-scrollable",
+  "private": true
+}
