@@ -1,6 +1,10 @@
 var Engine  = require('famous/core/Engine'),
     Surface = require('famous/core/Surface');
 
+var GenericSync = require('famous/inputs/GenericSync'),
+    ScrollSync  = require('famous/inputs/ScrollSync'),
+    TouchSync   = require('famous/inputs/TouchSync');
+
 var Utility = require('famous/utilities/Utility');
 
 var Scrollable = require('../../Scrollable');
@@ -9,6 +13,13 @@ var mainContext = Engine.createContext();
 var scrollable = new Scrollable({
   direction: Utility.Direction.Y
 });
+
+GenericSync.register({
+  scroll: ScrollSync.bind(null, { direction: Utility.Direction.Y }),
+  touch: TouchSync.bind(null, { direction: Utility.Direction.Y })
+});
+
+scrollable.inputSync.addSync(['scroll', 'touch']);
 
 var items = createItems(20);
 
@@ -29,6 +40,7 @@ function createItems (num) {
         color: '#fff'
       }
     });
+    item.pipe(scrollable.inputSync);
     result.push(item);
   }
 
